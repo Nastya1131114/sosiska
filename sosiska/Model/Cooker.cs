@@ -9,8 +9,8 @@ namespace sosiska.Model
 {
     internal class Cooker
     {
-        public int Id { get; set; }
-        //public  Speciality { get; set; }
-       
+        public int CookerId { get; set; }
+        public int WorkerId { get; set; }
+        public Category Category { get; set; }
     }
 }

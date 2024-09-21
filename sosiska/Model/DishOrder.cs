@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace sosiska.Model
 {
-    internal class OrderComponent
+    internal class DishOrder
     {
-        public int OrderCompoID { get; set; }
+        public int DishOrderID { get; set; }
+        public int OrderID { get; set; }
         public Dish Dish { get; set; }
+        public double Amount { get; set; }
     }
 }

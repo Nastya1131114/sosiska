@@ -11,7 +11,7 @@ namespace sosiska.Model
         public int Id { get; set; } 
         public int ClientId { get; set; }
         public Client Client { get; set; }
-        public Dish Dish { get; set; }  // ??
-        public Menu Menu { get; set; } //??
+        //public Dish Dish { get; set; }  // !
+
     }
 }

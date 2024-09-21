@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using sosiska;
 
@@ -11,9 +12,11 @@ using sosiska;
 namespace sosiska.Migrations
 {
     [DbContext(typeof(MySosiskaContect))]
-    partial class MySosiskaContectModelSnapshot : ModelSnapshot
+    [Migration("20240921095415_3")]
+    partial class _3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,7 +39,7 @@ namespace sosiska.Migrations
 
                     b.HasKey("ClientId");
 
-                    b.ToTable("Clients", (string)null);
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("sosiska.Model.Cooker", b =>
@@ -49,7 +52,7 @@ namespace sosiska.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cookers", (string)null);
+                    b.ToTable("Cookers");
                 });
 
             modelBuilder.Entity("sosiska.Model.Dish", b =>
@@ -71,7 +74,7 @@ namespace sosiska.Migrations
 
                     b.HasIndex("MenuId");
 
-                    b.ToTable("Dishes", (string)null);
+                    b.ToTable("Dishes");
                 });
 
             modelBuilder.Entity("sosiska.Model.DishComponent", b =>
@@ -97,7 +100,7 @@ namespace sosiska.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("DishComponent", (string)null);
+                    b.ToTable("DishComponent");
                 });
 
             modelBuilder.Entity("sosiska.Model.DishOrder", b =>
@@ -121,7 +124,7 @@ namespace sosiska.Migrations
 
                     b.HasIndex("DishId");
 
-                    b.ToTable("DishOrders", (string)null);
+                    b.ToTable("DishOrders");
                 });
 
             modelBuilder.Entity("sosiska.Model.Grade", b =>
@@ -138,7 +141,7 @@ namespace sosiska.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Grades", (string)null);
+                    b.ToTable("Grades");
                 });
 
             modelBuilder.Entity("sosiska.Model.Menu", b =>
@@ -151,7 +154,7 @@ namespace sosiska.Migrations
 
                     b.HasKey("MenuId");
 
-                    b.ToTable("Menus", (string)null);
+                    b.ToTable("Menus");
                 });
 
             modelBuilder.Entity("sosiska.Model.Order", b =>
@@ -169,7 +172,7 @@ namespace sosiska.Migrations
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("sosiska.Model.Product", b =>
@@ -185,7 +188,7 @@ namespace sosiska.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("sosiska.Model.Worker", b =>
@@ -217,7 +220,7 @@ namespace sosiska.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Workers", (string)null);
+                    b.ToTable("Workers");
                 });
 
             modelBuilder.Entity("sosiska.Model.Dish", b =>
