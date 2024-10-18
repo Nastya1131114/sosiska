@@ -1,0 +1,36 @@
+﻿<Window x:Class="sosiska2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sosiska2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="430" Width="700" Icon="/11.jpg">
+    <Window.Background>
+        <ImageBrush ImageSource="/ук.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <DockPanel>
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="Справочник">
+                <MenuItem Header="Сотрудники" Click="MenuItem_Click" >
+                    <MenuItem Header="Работники"></MenuItem>
+                    <MenuItem Header="Категория" Click="MenuItem_Click_1" ></MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="Меню">
+                    <MenuItem Header ="Меню" Click="MenuItem_Click_2"></MenuItem>
+                    <MenuItem Header="Блюдо"></MenuItem>
+                    <MenuItem Header="Продукты" ></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Клиенты" >
+                    <MenuItem Header="Заказ">
+                        <MenuItem Header="Состав заказа" ></MenuItem>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <Separator />
+            <MenuItem Header="Edit" ></MenuItem>
+            <MenuItem Header="View" ></MenuItem>
+        </Menu>
+    </DockPanel>
+</Window>
