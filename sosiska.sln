@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sosiska", "sosiska\sosiska.csproj", "{937C6B8E-44A3-4989-8343-2A65AF5A2561}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sosiska2", "sosiska2\sosiska2.csproj", "{0FF5B6D2-B38A-40D3-A3C4-0EA3AF7350B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sosiska3", "Sosiska3\Sosiska3.csproj", "{E1D8F9D5-EFF3-4FA3-A4DA-A010B7CE3F5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sosiska3", "Sosiska3\Sosiska3.csproj", "{E1D8F9D5-EFF3-4FA3-A4DA-A010B7CE3F5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{B4D017CC-A5B1-4E81-94F7-244C053F3207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{B4D017CC-A5B1-4E81-94F7-244C053F3207}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{CC85C743-385E-4E0E-8917-F79FB5E3951F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{CC85C743-385E-4E0E-8917-F79FB5E3951F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{937C6B8E-44A3-4989-8343-2A65AF5A2561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{937C6B8E-44A3-4989-8343-2A65AF5A2561}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{937C6B8E-44A3-4989-8343-2A65AF5A2561}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{937C6B8E-44A3-4989-8343-2A65AF5A2561}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FF5B6D2-B38A-40D3-A3C4-0EA3AF7350B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FF5B6D2-B38A-40D3-A3C4-0EA3AF7350B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF5B6D2-B38A-40D3-A3C4-0EA3AF7350B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
