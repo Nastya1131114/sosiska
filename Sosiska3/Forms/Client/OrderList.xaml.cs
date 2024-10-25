@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace Sosiska3.Forms.Client
 {
     /// <summary>
-    /// Логика взаимодействия для Order.xaml
+    /// Логика взаимодействия для OrderList.xaml
     /// </summary>
-    public partial class Order : Window
+    public partial class OrderList : Window
     {
-        public Order()
+        public OrderList()
         {
             InitializeComponent();
+        }
+
+        private void DGridMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
