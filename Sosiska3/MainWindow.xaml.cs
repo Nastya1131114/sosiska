@@ -1,4 +1,6 @@
 ﻿using Sosiska3.Forms;
+using Sosiska3.Forms.Client;
+using Sosiska3.Forms.Dish;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,14 +30,14 @@ namespace Sosiska3
         }
         private void Menu_Click1(object sender, RoutedEventArgs e)
         {
-            
-
+            MenuuList menuuList = new MenuuList();
+            menuuList.ShowDialog();
         }
 
         private void Order(object sender, RoutedEventArgs e)
         {
-            OrderPagexaml orderPage = new OrderPagexaml();  
-            orderPage.ShowsNavigationUI = true;
+            OrderList orderlist = new OrderList();
+            orderlist.ShowDialog();
         }
     }
 }

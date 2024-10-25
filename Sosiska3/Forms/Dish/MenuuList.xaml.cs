@@ -10,19 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sosiska3
+namespace Sosiska3.Forms.Dish
 {
     /// <summary>
-    /// Логика взаимодействия для Category.xaml
+    /// Логика взаимодействия для MenuuList.xaml
     /// </summary>
-    public partial class MenuList : Page
+    public partial class MenuuList : Window
     {
-        public MenuList()
+        public MenuuList()
         {
-            //InitializeComponent();
+            InitializeComponent();
+        }
+
+        private void DGridMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
