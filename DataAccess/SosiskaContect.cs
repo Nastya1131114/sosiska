@@ -8,9 +8,20 @@ using System.Threading.Tasks;
 
 namespace sosiska
 {
-    internal class MySosiskaContect : DbContext
+    public class MySosiskaContect : DbContext
     {
-
+        private static MySosiskaContect defaultContext;
+        public static MySosiskaContect DefaultContext 
+        { 
+            get 
+            { 
+                return defaultContext ?? (defaultContext = new MySosiskaContect()); 
+            } 
+        }
+        public MySosiskaContect(): base()
+        { 
+            Database.SetCommandTimeout(TimeSpan.FromSeconds(60));
+        }
         public DbSet<Dish> Dishes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,7 +32,7 @@ namespace sosiska
 
         public DbSet<Cooker> Cookers { get; set; }
         public DbSet<Worker> Workers { get; set; }
-        public DbSet<Category> Grades  { get; set; }
+        public DbSet<Category> Categories  { get; set; }
         public DbSet<Client>  Clients {get; set; }
         public DbSet<DishOrder> DishOrders  { get; set; }
         public DbSet<Order> Orders { get; set; }

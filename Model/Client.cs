@@ -10,7 +10,7 @@ namespace sosiska.Model
     {
         public int ClientId { get; set; } 
         public string ClientName { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
         public Client() 
         {
             Orders = new List<Order>();

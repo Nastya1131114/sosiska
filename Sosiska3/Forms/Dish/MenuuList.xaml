@@ -26,6 +26,6 @@
             </DataGridTemplateColumn>
         </DataGrid>
         <Button Content="Добавить" HorizontalAlignment="Left" Margin="42,0,0,16" Grid.Row="1" VerticalAlignment="Bottom" Height="47" Width="169"/>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="588,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="169"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="588,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="169" Click="Button_Click"/>
     </Grid>
 </Window>

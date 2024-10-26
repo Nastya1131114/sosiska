@@ -10,6 +10,7 @@ namespace sosiska.Model
     {
         public int Id { get; set; }
         public string CategoryName { get; set; }
+        public ICollection <Worker> Workers { get; set; } = new List<Worker>();
         public ICollection<Cooker>Cookers { get; set; }
         public Category() 
         { 

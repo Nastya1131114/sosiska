@@ -20,9 +20,7 @@
             <Button Grid.Column="2" Content="Отмена" Grid.ColumnSpan="2" Margin="175,0,25,0" Click="Button_Click"/>
         </Grid>
         <DockPanel Height="357">
-            <ListBox Width="400" DockPanel.Dock="Left" Height="359">
-
-            </ListBox>
+            <ListBox Width="400" DockPanel.Dock="Left" Height="359"></ListBox>
             <UniformGrid Columns="2" VerticalAlignment="Top">
                 <TextBlock Text="Фамилия" Grid.Column="0" Grid.Row="0"/>
                 <TextBox Text="{Binding Path=Surname}"  Grid.Column="1" Grid.Row="0" />

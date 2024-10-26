@@ -28,5 +28,10 @@ namespace Sosiska3.Forms.Client
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

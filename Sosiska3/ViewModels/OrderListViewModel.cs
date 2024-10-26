@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using sosiska.Model;
 using sosiska;
-//using Sosiska3.Forms.Worker;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,26 +12,29 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Sosiska3.ViewModels
 {
-    public class WorkerListViewModel : INotifyPropertyChanged
+    class OrderListViewModel : INotifyPropertyChanged
     {
-        public WorkerListViewModel()
+        public OrderListViewModel()
         {
-            Workers = MySosiskaContect.DefaultContext.Workers.Include(d=>d.Categories).ToList();
-            Categories = MySosiskaContect.DefaultContext.Categories.ToList();
+            Orders = MySosiskaContect.DefaultContext.Orders.Include(d => d.Clients).ToList();
+            Clients = MySosiskaContect.DefaultContext.Clients.ToList();
+            //Dishes = MySosiskaContect.DefaultContext.Dishes.ToList();
+            DishOrders = MySosiskaContect.DefaultContext.DishOrders.ToList();
         }
-        private List<Worker> _workers;
-        public List<Worker> Workers
+        private List<Order> _orders;
+        public List<Order> Orders
         {
-            get { return _workers; }
+            get { return _orders; }
             set
             {
-                _workers = value;
+                _orders = value;
                 OnPropertyChanged();
             }
         }
-        public List<Category> Categories { get; set; }
-
         public event PropertyChangedEventHandler? PropertyChanged;
+        public List<Client> Clients { get; set; }
+        public List<Dish> Dishes { get; set; } 
+        public List<DishOrder> DishOrders { get; set; }
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
@@ -41,3 +43,4 @@ namespace Sosiska3.ViewModels
         public Worker SelectedWorker { get; set; }
     }
 }
+
