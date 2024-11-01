@@ -9,7 +9,9 @@
         Title="OrderList" Height="450" Width="800"
         d:DataContext="{d:DesignInstance Type=viewModel:OrderListViewModel}">
     <DockPanel>
-        <ListBox Width="420" DockPanel.Dock="Left" Height="359"></ListBox>
+        <ListBox Width="420" DockPanel.Dock="Left" Height="359">
+            <Grid Height="351" Width="415"/>
+        </ListBox>
         <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="377*"/>
