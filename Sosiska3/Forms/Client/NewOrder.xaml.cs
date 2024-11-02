@@ -27,7 +27,8 @@ namespace Sosiska3.Forms.Client
         private void BackListOrder(object sender, RoutedEventArgs e)
         {
             this.Close();
-            //OrderList orderList = new OrderList();  
+            OrderList orderList = new OrderList();
+            orderList.Show();
 
         }
     }
