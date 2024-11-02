@@ -36,6 +36,7 @@ namespace Sosiska3
 
         private void Order(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             OrderList orderlist = new OrderList();
             orderlist.ShowDialog();
         }

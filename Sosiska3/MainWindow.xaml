@@ -23,7 +23,7 @@
                 </MenuItem>
                 <MenuItem Header="Клиенты" >
                     <MenuItem Header="Заказ" Click="Order">
-                        <MenuItem Header="Состав заказа" ></MenuItem>
+                        <!--<MenuItem Header="Состав заказа" ></MenuItem>-->
                     </MenuItem>
                 </MenuItem>
             </MenuItem>

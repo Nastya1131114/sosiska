@@ -7,17 +7,17 @@
         xmlns:viewModel="clr-namespace:Sosiska3.ViewModels"
         mc:Ignorable="d"
         Title="OrderList" Height="450" Width="800"
-        d:DataContext="{d:DesignInstance Type=viewModel:OrderListViewModel}">
-    <DockPanel>
+        d:DataContext="{d:DesignInstance Type=viewModel:OrderListViewModel}" MinWidth="825" MinHeight="475" MaxWidth="825" MaxHeight="475">
+    <DockPanel Margin="0,0,0,-6">
         <ListBox Width="420" DockPanel.Dock="Left" Height="359">
-            <Grid Height="351" Width="415"/>
+            <Grid Height="342" Width="415"/>
         </ListBox>
-        <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="455">
             <Grid.RowDefinitions>
                 <RowDefinition Height="377*"/>
                 <RowDefinition Height="73*"/>
             </Grid.RowDefinitions>
-            <DataGrid x:Name="DGridMenu" ItemsSource="{Binding Path=Orders}" Background="#FF688CAF" Margin="0,10,0,70" Grid.RowSpan="2" SelectionChanged="DGridMenu_SelectionChanged">
+            <DataGrid x:Name="DGridMenu" ItemsSource="{Binding Path=Orders}" Background="#FF688CAF" Margin="0,0,0,10" SelectionChanged="DGridMenu_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Имя заказчика" Binding="{Binding Client.ClientName}" Width="*"></DataGridTextColumn>
                     <DataGridTextColumn Header="К оплате" Binding="{Binding }" Width="*"></DataGridTextColumn>
@@ -30,8 +30,9 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid>
-            <Button Content="Добавить" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="169" Margin="21,10,0,0"/>
-            <Button Content="Назад" HorizontalAlignment="Left" Margin="199,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="169" Click="Button_Click"/>
+            <Button Content="Добавить" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="169" Margin="21,10,0,0" Click="Button_Click"/>
+            <Button Content="Назад" HorizontalAlignment="Left" Margin="199,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="169" Click="Button_Click_1"/>
         </Grid>
+
     </DockPanel>
 </Window>
