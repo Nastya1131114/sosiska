@@ -12,21 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Sosiska3.Forms.Client
+namespace Sosiska3.Forms.Worker
 {
-    public partial class NewOrder : Window
+    /// <summary>
+    /// Логика взаимодействия для AddWorker.xaml
+    /// </summary>
+    public partial class AddWorker : Window
     {
-        public NewOrder()
+        public AddWorker()
         {
             InitializeComponent();
         }
 
-        private void BackListOrder(object sender, RoutedEventArgs e)
+        private void Back(object sender, RoutedEventArgs e)
         {
             this.Close();
-            OrderList orderList = new OrderList();
-            orderList.Show();
-
         }
     }
 }

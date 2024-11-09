@@ -1,6 +1,7 @@
 ﻿using Sosiska3.Forms;
 using Sosiska3.Forms.Client;
 using Sosiska3.Forms.Dish;
+using Sosiska3.Forms.Worker;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,8 +26,8 @@ namespace Sosiska3
         }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            WorkerList worker = new WorkerList();
-            worker.ShowDialog();
+            WorkerShowList workershow = new WorkerShowList();
+            workershow.ShowDialog();
         }
         private void Menu_Click1(object sender, RoutedEventArgs e)
         {

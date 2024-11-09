@@ -11,29 +11,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using sosiska.Model;
 
-namespace Sosiska3.Forms
+namespace Sosiska3.Forms.Worker
 {
     /// <summary>
-    /// Логика взаимодействия для Worker.xaml
+    /// Логика взаимодействия для WorkerShowList.xaml
     /// </summary>
-    public partial class WorkerList : Window
+    public partial class WorkerShowList : Window
     {
-        public WorkerList()
+        public WorkerShowList()
         {
             InitializeComponent();
-            DataContext = new Worker()
-            {
-                Surname = "sdffdsfds" 
-            };
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
 
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            AddWorker addWorker = new AddWorker();
+            addWorker.Show();
         }
     }
 }

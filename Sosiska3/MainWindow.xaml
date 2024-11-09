@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sosiska3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="430" Width="700">
+        Title="MainWindow" Height="430" Width="700" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontFamily="Times New Roman" FontSize="14">
     <!--<Window.Background>
         <ImageBrush ImageSource="/ук.jpg" Stretch="UniformToFill"/>
     </Window.Background>-->
     <DockPanel Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
-        <Menu Height="25" VerticalAlignment="Top">
-            <MenuItem Header="Справочник">
+        <Menu Height="25" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" DockPanel.Dock="Top">
+            <MenuItem Header="Справочник" FontFamily="Times New Roman" FontSize="14">
                 <MenuItem Header="Сотрудники" Click="MenuItem_Click">
                     <MenuItem Header="Работники"></MenuItem>
                 </MenuItem>
@@ -28,7 +28,7 @@
                 </MenuItem>
             </MenuItem>
             <Separator />
-            <MenuItem Header="О программе" ></MenuItem>
+            <MenuItem Header="О программе" FontFamily="Times New Roman" FontSize="14" FontStyle="Italic" ></MenuItem>
         </Menu>
     </DockPanel>
 </Window>
