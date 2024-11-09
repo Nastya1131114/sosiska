@@ -18,7 +18,6 @@ namespace Sosiska3.ViewModels
         public WorkerListViewModel()
         {
             Workers = MySosiskaContect.DefaultContext.Workers.Include(d=>d.Categories).ToList();
-            Categories = MySosiskaContect.DefaultContext.Categories.ToList();
         }
         private List<Worker> _workers;
         public List<Worker> Workers
@@ -30,7 +29,6 @@ namespace Sosiska3.ViewModels
                 OnPropertyChanged();
             }
         }
-        public List<Category> Categories { get; set; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

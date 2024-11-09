@@ -16,7 +16,7 @@ namespace Sosiska3.ViewModels
     {
         public OrderListViewModel()
         {
-            Orders = MySosiskaContect.DefaultContext.Orders.Include(d => d.Clients).ToList();
+            Orders = MySosiskaContect.DefaultContext.Orders.Include(d => d.Client).ToList();// Clients 
             Clients = MySosiskaContect.DefaultContext.Clients.ToList();
             //Dishes = MySosiskaContect.DefaultContext.Dishes.ToList();
             DishOrders = MySosiskaContect.DefaultContext.DishOrders.ToList();
@@ -43,4 +43,3 @@ namespace Sosiska3.ViewModels
         public Worker SelectedWorker { get; set; }
     }
 }
-

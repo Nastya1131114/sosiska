@@ -1,0 +1,17 @@
+﻿<Window x:Class="Sosiska3.Forms.Dish.DishForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sosiska3.Forms.Dish"
+        mc:Ignorable="d"
+        Title="DishForm" Height="450" Width="800">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="10,393,0,0" VerticalAlignment="Top" Height="31" Width="66"/>
+        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="99,393,0,0" VerticalAlignment="Top" Height="31" Width="66"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="187,393,0,0" VerticalAlignment="Top" Height="31" Width="66"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="280,393,0,0" VerticalAlignment="Top" Height="31" Width="66"/>
+        <ScrollViewer Margin="-57,0,10,0"/>
+
+    </Grid>
+</Window>

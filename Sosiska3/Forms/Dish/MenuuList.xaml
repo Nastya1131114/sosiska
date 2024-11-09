@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Sosiska3.Forms.Dish"
         mc:Ignorable="d"
         Title="MenuuList" Height="450" Width="800">
-    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="377*"/>
             <RowDefinition Height="73*"/>

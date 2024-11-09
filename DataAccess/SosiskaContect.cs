@@ -26,6 +26,7 @@ namespace sosiska
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database= Sosiska; Trusted_Connection=True; TrustServerCertificate=True;");
+            optionsBuilder.LogTo(message => System.Diagnostics.Debug.WriteLine(message));
         }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -37,7 +38,7 @@ namespace sosiska
         public DbSet<DishOrder> DishOrders  { get; set; }
         public DbSet<Order> Orders { get; set; }
         //public DbSet<>  { get; set; }
-}
+    }
 
 
 }

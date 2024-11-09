@@ -8,9 +8,17 @@
         mc:Ignorable="d"
         Title="OrderList" Height="450" Width="800"
         d:DataContext="{d:DesignInstance Type=viewModel:OrderListViewModel}" MinWidth="825" MinHeight="475" MaxWidth="825" MaxHeight="475">
-    <DockPanel Margin="0,0,0,-6">
+    <DockPanel Margin="0,0,0,-6" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
         <ListBox Width="420" DockPanel.Dock="Left" Height="359">
-            <Grid Height="342" Width="415"/>
+            <DataGrid CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Path=Workers}" Margin="0,0,263,0"
+          Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="36" Width="406">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="" Binding="{Binding }" />
+                    <DataGridTextColumn Header="" Binding="{Binding }" />
+                    <DataGridTextColumn Header="" Binding="{Binding }" />
+                    <DataGridTextColumn Header="" Binding="{Binding }" />                 
+                </DataGrid.Columns>
+            </DataGrid>
         </ListBox>
         <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Height="455">
             <Grid.RowDefinitions>
