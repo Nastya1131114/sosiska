@@ -10,7 +10,7 @@ using sosiska;
 
 namespace sosiska.Migrations
 {
-    [DbContext(typeof(MySosiskaContect))]
+    [DbContext(typeof(MyDbContect))]
     partial class MySosiskaContectModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -176,13 +176,16 @@ namespace sosiska.Migrations
 
             modelBuilder.Entity("sosiska.Model.Menu", b =>
                 {
-                    b.Property<int>("MenuId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.HasKey("MenuId");
+                    b.Property<int>("MenuId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Menus");
                 });
@@ -334,13 +337,13 @@ namespace sosiska.Migrations
 
             modelBuilder.Entity("sosiska.Model.Order", b =>
                 {
-                    b.HasOne("sosiska.Model.Client", "Client")
+                    b.HasOne("sosiska.Model.Client", "Clients")
                         .WithMany("Orders")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Client");
+                    b.Navigation("Clients");
                 });
 
             modelBuilder.Entity("sosiska.Model.Category", b =>

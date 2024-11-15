@@ -11,7 +11,7 @@ using sosiska;
 
 namespace sosiska.Migrations
 {
-    [DbContext(typeof(MySosiskaContect))]
+    [DbContext(typeof(MyDbContect))]
     [Migration("20241109092959_Изменение класса Order")]
     partial class ИзменениеклассаOrder
     {

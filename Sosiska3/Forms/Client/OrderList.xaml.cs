@@ -29,18 +29,19 @@ namespace Sosiska3.Forms.Client
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Add(object sender, RoutedEventArgs e)
         {
             this.Close();
-            NewOrder newOrder = new NewOrder(); 
+            NewOrder newOrder = new NewOrder();
             newOrder.ShowDialog();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Back(object sender, RoutedEventArgs e)
         {
             this.Close();
-            MainWindow main = new MainWindow(); 
+            MainWindow main = new MainWindow();
             main.ShowDialog();
         }
+
     }
 }

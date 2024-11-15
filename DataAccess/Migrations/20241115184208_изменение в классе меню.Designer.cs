@@ -12,15 +12,15 @@ using sosiska;
 namespace sosiska.Migrations
 {
     [DbContext(typeof(MyDbContect))]
-    [Migration("20241026100535_Сделали связь многие ко многим между Category и Worker")]
-    partial class СделалисвязьмногиекомногиммеждуCategoryиWorker
+    [Migration("20241115184208_изменение в классе меню")]
+    partial class изменениевклассеменю
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -172,18 +172,23 @@ namespace sosiska.Migrations
 
                     b.HasIndex("DishId");
 
+                    b.HasIndex("OrderID");
+
                     b.ToTable("DishOrders");
                 });
 
             modelBuilder.Entity("sosiska.Model.Menu", b =>
                 {
-                    b.Property<int>("MenuId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.HasKey("MenuId");
+                    b.Property<int>("MenuId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Menus");
                 });
@@ -317,23 +322,31 @@ namespace sosiska.Migrations
             modelBuilder.Entity("sosiska.Model.DishOrder", b =>
                 {
                     b.HasOne("sosiska.Model.Dish", "Dish")
-                        .WithMany()
+                        .WithMany("orders")
                         .HasForeignKey("DishId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("sosiska.Model.Order", "Order")
+                        .WithMany("DishOrders")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Dish");
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("sosiska.Model.Order", b =>
                 {
-                    b.HasOne("sosiska.Model.Client", "Client")
+                    b.HasOne("sosiska.Model.Client", "Clients")
                         .WithMany("Orders")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Client");
+                    b.Navigation("Clients");
                 });
 
             modelBuilder.Entity("sosiska.Model.Category", b =>
@@ -349,11 +362,18 @@ namespace sosiska.Migrations
             modelBuilder.Entity("sosiska.Model.Dish", b =>
                 {
                     b.Navigation("DishComponents");
+
+                    b.Navigation("orders");
                 });
 
             modelBuilder.Entity("sosiska.Model.Menu", b =>
                 {
                     b.Navigation("Dishes");
+                });
+
+            modelBuilder.Entity("sosiska.Model.Order", b =>
+                {
+                    b.Navigation("DishOrders");
                 });
 
             modelBuilder.Entity("sosiska.Model.Product", b =>

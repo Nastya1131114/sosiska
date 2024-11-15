@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace sosiska
 {
-    public class MySosiskaContect : DbContext
+    public class MyDbContect : DbContext
     {
-        private static MySosiskaContect defaultContext;
-        public static MySosiskaContect DefaultContext 
+        private static MyDbContect defaultContext;
+        public static MyDbContect DefaultContext 
         { 
             get 
             { 
-                return defaultContext ?? (defaultContext = new MySosiskaContect()); 
+                return defaultContext ?? (defaultContext = new MyDbContect()); 
             } 
         }
-        public MySosiskaContect(): base()
+        public MyDbContect(): base()
         { 
             Database.SetCommandTimeout(TimeSpan.FromSeconds(60));
         }

@@ -11,7 +11,7 @@ using sosiska;
 
 namespace sosiska.Migrations
 {
-    [DbContext(typeof(MySosiskaContect))]
+    [DbContext(typeof(MyDbContect))]
     [Migration("20240921103040_В Cooker добавлены категория и сотрудник")]
     partial class ВCookerдобавленыкатегорияисотрудник
     {

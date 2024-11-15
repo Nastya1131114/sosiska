@@ -17,7 +17,7 @@ namespace Sosiska3.ViewModels
     {
         public WorkerListViewModel()
         {
-            Workers = MySosiskaContect.DefaultContext.Workers.Include(d=>d.Categories).ToList();
+            Workers = MyDbContect.DefaultContext.Workers.Include(d=>d.Categories).ToList();
         }
         private List<Worker> _workers;
         public List<Worker> Workers

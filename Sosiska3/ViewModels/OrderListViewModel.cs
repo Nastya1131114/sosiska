@@ -16,10 +16,13 @@ namespace Sosiska3.ViewModels
     {
         public OrderListViewModel()
         {
-            Orders = MySosiskaContect.DefaultContext.Orders.Include(d => d.Clients).ToList();// Clients 
-            Clients = MySosiskaContect.DefaultContext.Clients.ToList();
+            Orders = MyDbContect.DefaultContext.Orders
+                .Include(d => d.Clients)
+                .Include(d => d.DishOrders)
+                .ToList();// Clients 
+            Clients = MyDbContect.DefaultContext.Clients.ToList();
             //Dishes = MySosiskaContect.DefaultContext.Dishes.ToList();
-        //    DishOrders = MySosiskaContect.DefaultContext.DishOrders.ToList();
+            //    DishOrders = MySosiskaContect.DefaultContext.DishOrders.ToList();
         }
         //private List <Client> _clients;
         //private List<Client> Clients
@@ -41,15 +44,32 @@ namespace Sosiska3.ViewModels
                 OnPropertyChanged();
             }
         }
-        public event PropertyChangedEventHandler? PropertyChanged;
         public List<Client> Clients { get; set; }
         //public List<Dish> Dishes { get; set; } 
         //public List<DishOrder> DishOrders { get; set; }
+
+
+        public Order _selectedOrder;
+        public Order SelectedOrder
+        {
+            get
+            {
+                return _selectedOrder;
+            }
+            set
+            {
+                _selectedOrder = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
+        public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-        public Worker SelectedWorker { get; set; }
     }
 }

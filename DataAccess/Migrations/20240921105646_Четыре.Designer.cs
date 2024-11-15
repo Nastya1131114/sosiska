@@ -11,7 +11,7 @@ using sosiska;
 
 namespace sosiska.Migrations
 {
-    [DbContext(typeof(MySosiskaContect))]
+    [DbContext(typeof(MyDbContect))]
     [Migration("20240921105646_Четыре")]
     partial class Четыре
     {

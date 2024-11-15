@@ -21,8 +21,8 @@ namespace проба
             //    Console.WriteLine(reader["categoryname"] + " " + reader["id"]);
             //}
 
-            MySosiskaContect mySosiskaContect = new MySosiskaContect();
-            MySosiskaContect mySosiskaContect2 = new MySosiskaContect();
+            MyDbContect mySosiskaContect = new MyDbContect();
+            MyDbContect mySosiskaContect2 = new MyDbContect();
             
             var categories  = mySosiskaContect.Categories.ToArray();// перебор в массиве
             foreach (var category in categories)

@@ -10,7 +10,7 @@ using sosiska;
 
 namespace sosiska.Migrations
 {
-    [DbContext(typeof(MySosiskaContect))]
+    [DbContext(typeof(MyDbContect))]
     [Migration("20240914121909_First")]
     partial class First
     {

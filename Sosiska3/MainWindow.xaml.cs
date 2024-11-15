@@ -35,11 +35,11 @@ namespace Sosiska3
             menuuList.ShowDialog();
         }
 
-        private void Order(object sender, RoutedEventArgs e)
+        private void OrderList(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            OrderList orderlist = new OrderList();
-            orderlist.ShowDialog();
+            OrderList order = new OrderList();
+            order.ShowDialog();
         }
     }
 }
