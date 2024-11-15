@@ -11,7 +11,7 @@ namespace sosiska.Model
         public int OrderId { get; set; }
         public int ClientId { get; set; }
         public virtual ICollection<DishOrder> DishOrders {get; set; }= new List<DishOrder>();
-        public Client Client { get; set; }
+        public Client Clients { get; set; }
         //public Dish Dish { get; set; }  // убрать если что отсюда 
 
     }

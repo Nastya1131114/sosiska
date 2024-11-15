@@ -16,11 +16,21 @@ namespace Sosiska3.ViewModels
     {
         public OrderListViewModel()
         {
-            Orders = MySosiskaContect.DefaultContext.Orders.Include(d => d.Client).ToList();// Clients 
+            Orders = MySosiskaContect.DefaultContext.Orders.Include(d => d.Clients).ToList();// Clients 
             Clients = MySosiskaContect.DefaultContext.Clients.ToList();
             //Dishes = MySosiskaContect.DefaultContext.Dishes.ToList();
-            DishOrders = MySosiskaContect.DefaultContext.DishOrders.ToList();
+        //    DishOrders = MySosiskaContect.DefaultContext.DishOrders.ToList();
         }
+        //private List <Client> _clients;
+        //private List<Client> Clients
+        //{
+        //    get { return _clients; }
+        //    set
+        //    { 
+        //        _clients = value; 
+        //        OnPropertyChanged();
+        //    }
+        //}
         private List<Order> _orders;
         public List<Order> Orders
         {
@@ -33,8 +43,8 @@ namespace Sosiska3.ViewModels
         }
         public event PropertyChangedEventHandler? PropertyChanged;
         public List<Client> Clients { get; set; }
-        public List<Dish> Dishes { get; set; } 
-        public List<DishOrder> DishOrders { get; set; }
+        //public List<Dish> Dishes { get; set; } 
+        //public List<DishOrder> DishOrders { get; set; }
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
