@@ -10,11 +10,11 @@
         d:DataContext="{d:DesignInstance Type=viewModel:OrderListViewModel}">
     <!--MinWidth="825" MinHeight="475" MaxWidth="825" MaxHeight="475">-->
     <DockPanel  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
-        <DataGrid DockPanel.Dock="Left"  CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Path=Clients}"
+        <DataGrid DockPanel.Dock="Left"  CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Path=Orders}"
           Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"  Width="406">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Номер" Binding="{Binding OrderId}" />
-                    <DataGridTextColumn Header="Заказчик" Binding="{Binding ClienId}" />
+                    <DataGridTextColumn Header="Номер" Binding="{Binding Path=OrderId}" />
+                    <DataGridTextColumn Header="Заказчик" Binding="{Binding Path=Clients.ClientName}" />
                     <!--<DataGridTextColumn Header="" Binding="{Binding }" />
                     <DataGridTextColumn Header="" Binding="{Binding }" />-->                 
                 </DataGrid.Columns>
