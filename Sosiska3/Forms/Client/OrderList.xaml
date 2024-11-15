@@ -10,7 +10,7 @@
         d:DataContext="{d:DesignInstance Type=viewModel:OrderListViewModel}">
     <!--MinWidth="825" MinHeight="475" MaxWidth="825" MaxHeight="475">-->
     <DockPanel  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
-        <DataGrid DockPanel.Dock="Left"  CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Path=Orders}"
+        <DataGrid DockPanel.Dock="Left"  CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Path=Orders}" SelectedItem="{Binding Path=SelectedOrder}"
           Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"  Width="406">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Номер" Binding="{Binding Path=OrderId}" />
@@ -24,7 +24,7 @@
                 <RowDefinition Height="377*"/>
                 <RowDefinition Height="73*"/>
             </Grid.RowDefinitions>
-            <DataGrid x:Name="DGridMenu" ItemsSource="{Binding Path=Clients}" Background="#FF688CAF" Margin="0,0,0,10" SelectionChanged="DGridMenu_SelectionChanged">
+            <DataGrid  ItemsSource="{Binding Path=SelectedOrder.DishOrders}" Background="#FF688CAF" Margin="0,0,0,10">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Имя заказчика" Binding="{Binding ClientName}" Width="*"></DataGridTextColumn>
                     <DataGridTextColumn Header="К оплате" Binding="{Binding }" Width="*"></DataGridTextColumn>
