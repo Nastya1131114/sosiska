@@ -31,8 +31,8 @@ namespace Sosiska3
         }
         private void Menu_Click1(object sender, RoutedEventArgs e)
         {
-            MenuuList menuuList = new MenuuList();
-            menuuList.ShowDialog();
+            MenuuList menus = new MenuuList();
+            menus.ShowDialog();
         }
 
         private void OrderList(object sender, RoutedEventArgs e)

@@ -28,7 +28,7 @@ namespace sosiska
             optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database= Sosiska; Trusted_Connection=True; TrustServerCertificate=True;");
             optionsBuilder.LogTo(message => System.Diagnostics.Debug.WriteLine(message));
         }
-        public DbSet<Menu> Menus { get; set; }
+        //public DbSet<Menu> Menus { get; set; }
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Cooker> Cookers { get; set; }

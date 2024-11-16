@@ -12,8 +12,8 @@ using sosiska;
 namespace sosiska.Migrations
 {
     [DbContext(typeof(MyDbContect))]
-    [Migration("20241115185026_изменение в классе меню 2")]
-    partial class изменениевклассеменю2
+    [Migration("20241116090748_Удаление класса Menu")]
+    partial class УдалениеклассаMenu
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -115,12 +115,7 @@ namespace sosiska.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MenuId")
-                        .HasColumnType("int");
-
                     b.HasKey("DishId");
-
-                    b.HasIndex("MenuId");
 
                     b.ToTable("Dishes");
                 });
@@ -175,22 +170,6 @@ namespace sosiska.Migrations
                     b.HasIndex("OrderID");
 
                     b.ToTable("DishOrders");
-                });
-
-            modelBuilder.Entity("sosiska.Model.Menu", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("MenuId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Menus");
                 });
 
             modelBuilder.Entity("sosiska.Model.Order", b =>
@@ -289,17 +268,6 @@ namespace sosiska.Migrations
                     b.Navigation("Worker");
                 });
 
-            modelBuilder.Entity("sosiska.Model.Dish", b =>
-                {
-                    b.HasOne("sosiska.Model.Menu", "Menu")
-                        .WithMany("Dishes")
-                        .HasForeignKey("MenuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Menu");
-                });
-
             modelBuilder.Entity("sosiska.Model.DishComponent", b =>
                 {
                     b.HasOne("sosiska.Model.Dish", "Dish")
@@ -364,11 +332,6 @@ namespace sosiska.Migrations
                     b.Navigation("DishComponents");
 
                     b.Navigation("orders");
-                });
-
-            modelBuilder.Entity("sosiska.Model.Menu", b =>
-                {
-                    b.Navigation("Dishes");
                 });
 
             modelBuilder.Entity("sosiska.Model.Order", b =>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sosiska3.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Sosiska3.Forms.Client
         public OrderList()
         {
             InitializeComponent();
+            DataContext = new OrderListViewModel();
         }
 
         private void DGridMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)

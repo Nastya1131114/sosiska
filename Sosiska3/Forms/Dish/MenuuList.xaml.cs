@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sosiska3.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Sosiska3.Forms.Dish
         public MenuuList()
         {
             InitializeComponent();
+            DataContext = new DishListViewModel();
         }
 
         private void DGridMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -33,6 +35,6 @@ namespace Sosiska3.Forms.Dish
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
+        }            
     }
 }

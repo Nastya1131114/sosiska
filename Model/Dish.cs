@@ -11,11 +11,11 @@ namespace sosiska.Model
         //todo: добавить категории
         //todo: сделать многие ко многим с меню
         public int DishId { get; set; }
-        public int MenuId { get; set; }
-        public Menu Menu { get; set; }
+        //public int MenuId { get; set; }
+        //public Menu Menu { get; set; }
         public string DishName { get; set; }
         public int DishCost { get; set; }
-        public ICollection <DishOrder> orders { get; set; } = new List<DishOrder>();
+        public ICollection <DishOrder> Orders { get; set; } = new List<DishOrder>();
         public ICollection<DishComponent > DishComponents { get; set; }
         public Dish()
         {
