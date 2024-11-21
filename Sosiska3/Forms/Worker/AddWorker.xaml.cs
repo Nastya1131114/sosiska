@@ -15,6 +15,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Configuration;
+using Microsoft.Data.SqlClient;
 
 namespace Sosiska3.Forms.Worker
 {
@@ -27,7 +30,7 @@ namespace Sosiska3.Forms.Worker
         {
             InitializeComponent();
             DataContext = new WorkerListViewModel();
-            //MyDbContext context = new MyDbContext();
+            //DbContext context = new DbContext();
         }
 
         private void Back(object sender, RoutedEventArgs e)
@@ -37,15 +40,23 @@ namespace Sosiska3.Forms.Worker
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            using (var context = new MyDbContect())
+            string ConnectionString = @"Server=.\\SQLEXPRESS;Database= Sosiska; Trusted_Connection=True; TrustServerCertificate=True";
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                var worker = new Worker();
-                Surname = " ";
-                Name = " ";
-                MiddleName = "";
-                DataTime = " ";
-            };
-            context.SaveChanges();
+                conn.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO Workers (Surname, Name, MiddleName, Datatime) value (@Surname, @Name, @MiddleName, @Datatime)");
+                command.Connection = conn;
+                command.Parameters.AddWithValue("Surname", TextBox.Text);
+            }
+            //using (var context = new MyDbContect())
+            //{
+            //    var worker = new Worker();
+            //    Surname = " ";
+            //    Name = " ";
+            //    MiddleName = "";
+            //    DataTime = " ";
+            //};
+            //context.SaveChanges();
 
         }
     }

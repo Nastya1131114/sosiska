@@ -21,8 +21,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="3,73,0,0" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="3,94,0,0" TextWrapping="Wrap" Text="Категория" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
         <TextBox HorizontalAlignment="Left" Margin="189,8,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Margin="189,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Margin="189,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <!--<TextBox HorizontalAlignment="Left" Margin="189,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="189,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>-->
         <DatePicker HorizontalAlignment="Left" Margin="189,66,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
         <ComboBox HorizontalAlignment="Left" Margin="189,88,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
 
