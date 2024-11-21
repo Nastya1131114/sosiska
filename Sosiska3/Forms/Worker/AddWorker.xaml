@@ -12,7 +12,7 @@
             <ColumnDefinition Width="163*"/>
             <ColumnDefinition Width="57*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="3,144,0,0" VerticalAlignment="Top" Height="26" Width="129" Grid.Column="1"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="3,144,0,0" VerticalAlignment="Top" Height="26" Width="129" Grid.Column="1" Click="Button_Click"/>
         <Button Content="Отмена" HorizontalAlignment="Left" Margin="282,140,0,0" VerticalAlignment="Top" Height="26" Width="129" Click="Back" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="3,10,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="3,10,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
