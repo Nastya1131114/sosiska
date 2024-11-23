@@ -1,7 +1,7 @@
 ﻿using Sosiska3.Forms;
 using Sosiska3.Forms.Client;
 using Sosiska3.Forms.Dish;
-using Sosiska3.Forms.Worker;
+using Sosiska3.Forms.WorkerForms;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;

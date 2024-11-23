@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Sosiska3.Forms.Worker
+namespace Sosiska3.Forms.WorkerForms
 {
     /// <summary>
     /// Логика взаимодействия для WorkerShowList.xaml
