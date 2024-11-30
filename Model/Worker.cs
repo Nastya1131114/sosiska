@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,6 @@ namespace sosiska.Model
         public string Name { get; set; }
         public string MiddleName { get; set; }
         public DateTime Birthday { get; set; }
-
-        public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
-       // public Cooker? Cooker { get; set; } ВОЗМОЖНО УБРАТЬ   
+        public Position ? Position { get; set; }  
     }
 }

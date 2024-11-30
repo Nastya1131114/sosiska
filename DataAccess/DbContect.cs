@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Model;
 using sosiska.Model;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace sosiska
         public DbSet<Client>  Clients {get; set; }
         public DbSet<DishOrder> DishOrders  { get; set; }
         public DbSet<Order> Orders { get; set; }
-        //public DbSet<>  { get; set; }
+        public DbSet<Position> Positions  { get; set; }
     }
 
 

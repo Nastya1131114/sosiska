@@ -26,7 +26,7 @@ namespace Sosiska3.ViewModels
                 (obj) =>
                 {
                     MyDbContect.DefaultContext.Workers.Add(Worker);
-                    MyDbContect.DefaultContext.SaveChanges();
+                    MyDbContect.DefaultContext.SaveChanges(); // обрубается сохранения 
                 }
 
             );

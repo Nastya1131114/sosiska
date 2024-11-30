@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using sosiska;
 
@@ -11,9 +12,11 @@ using sosiska;
 namespace sosiska.Migrations
 {
     [DbContext(typeof(MyDbContect))]
-    partial class MySosiskaContectModelSnapshot : ModelSnapshot
+    [Migration("20241130103754_OneToManyBetweenCategoryAndCooker")]
+    partial class OneToManyBetweenCategoryAndCooker
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,23 +24,6 @@ namespace sosiska.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("Model.Position", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("PositionName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Positions");
-                });
 
             modelBuilder.Entity("sosiska.Model.Category", b =>
                 {
@@ -224,16 +210,11 @@ namespace sosiska.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PositionId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("WorkerId");
-
-                    b.HasIndex("PositionId");
 
                     b.ToTable("Workers");
                 });
@@ -304,20 +285,6 @@ namespace sosiska.Migrations
                         .IsRequired();
 
                     b.Navigation("Clients");
-                });
-
-            modelBuilder.Entity("sosiska.Model.Worker", b =>
-                {
-                    b.HasOne("Model.Position", "Position")
-                        .WithMany("Workers")
-                        .HasForeignKey("PositionId");
-
-                    b.Navigation("Position");
-                });
-
-            modelBuilder.Entity("Model.Position", b =>
-                {
-                    b.Navigation("Workers");
                 });
 
             modelBuilder.Entity("sosiska.Model.Category", b =>
