@@ -31,7 +31,7 @@ namespace Sosiska3.ViewModels
 
             );
         }
-        private List<Category> Categories { get; set; } 
+        public List<Category> Categories { get; set; } 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
