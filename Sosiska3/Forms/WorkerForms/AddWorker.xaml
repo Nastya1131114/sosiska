@@ -26,6 +26,6 @@
         <TextBox HorizontalAlignment="Left" Margin="189,29,0,0" TextWrapping="Wrap" Text="{Binding Path=Worker.Name}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Margin="189,50,0,0" TextWrapping="Wrap" Text="{Binding Path=Worker.MiddleName}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
         <DatePicker HorizontalAlignment="Left" Margin="189,66,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <ComboBox HorizontalAlignment="Left" Margin="189,88,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Categories}" SelectedItem="Category" DisplayMemberPath="CategoryName" /> 
+        <ComboBox HorizontalAlignment="Left" Margin="189,88,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Positions}" SelectedItem="{Binding Path= Worker.Position}" DisplayMemberPath="PositionName"/> 
     </Grid>
 </Window>

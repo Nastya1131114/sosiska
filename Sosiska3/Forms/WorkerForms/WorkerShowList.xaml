@@ -20,7 +20,7 @@
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name }" />
                 <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}" />
                 <DataGridTextColumn Header="Дата Рождения" Binding="{Binding Birthday}" />
-                <DataGridTextColumn Header="Категория" Binding="{Binding Categories}" />
+                <DataGridTextColumn Header="Должность" Binding="{Binding Path =Position.PositionName}" />
             </DataGrid.Columns>
         </DataGrid>
 

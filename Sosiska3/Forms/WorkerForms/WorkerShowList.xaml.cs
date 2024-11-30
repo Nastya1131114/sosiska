@@ -33,9 +33,8 @@ namespace Sosiska3.Forms.WorkerForms
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            this.Close();
             AddWorker addWorker = new AddWorker();
-            addWorker.Show();
+            addWorker.ShowDialog();
         }
     }
 }

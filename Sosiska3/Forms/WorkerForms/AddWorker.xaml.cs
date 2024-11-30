@@ -19,20 +19,27 @@ using System.Data.SqlClient;
 using System.Configuration;
 using Microsoft.Data.SqlClient;
 using sosiska.Model;
+using Sosiska3.ViewModels.Abstractions;
+
 
 namespace Sosiska3.Forms.WorkerForms
 {
     /// <summary>
     /// Логика взаимодействия для AddWorker.xaml
     /// </summary>
-    public partial class AddWorker : Window
+    public partial class AddWorker : Window, IExitManager
     {
         public AddWorker()
         {
             InitializeComponent();
             Worker tmp = new Worker();
-            DataContext = new AddWorkerViewModel(tmp);
+            DataContext = new AddWorkerViewModel(tmp, this);
             //DbContext context = new DbContext();
+        }
+
+        public void CloseForm()
+        {
+            Close();
         }
 
         private void Back(object sender, RoutedEventArgs e)
