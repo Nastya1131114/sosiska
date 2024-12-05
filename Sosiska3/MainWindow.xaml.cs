@@ -26,6 +26,7 @@ namespace Sosiska3
         }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            //this.Hide();
             WorkerShowList workershow = new WorkerShowList();
             workershow.ShowDialog();
         }
@@ -40,6 +41,12 @@ namespace Sosiska3
             this.Hide();
             OrderList order = new OrderList();
             order.ShowDialog();
+        }
+        private void CookerClick(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            CookerList cooker = new CookerList();
+            cooker.ShowDialog();
         }
     }
 }

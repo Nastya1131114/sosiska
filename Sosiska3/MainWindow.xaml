@@ -14,6 +14,7 @@
             <MenuItem Header="Справочник" FontFamily="Times New Roman" FontSize="14">
                 <MenuItem Header="Сотрудники" Click="MenuItem_Click">
                     <MenuItem Header="Работники"></MenuItem>
+                    <MenuItem Header="Сотрудники" Click="CookerClick"></MenuItem>
                 </MenuItem>
 
                 <MenuItem Header="Меню">
