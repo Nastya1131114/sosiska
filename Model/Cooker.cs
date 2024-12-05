@@ -10,7 +10,7 @@ namespace sosiska.Model
     public class Cooker
     {
         public int CookerId { get; set; }
-        public int DishID { get; set; } 
+        //public int DishID { get; set; } 
         public Category Category { get; set; }
         public Worker Worker { get; set; }
 

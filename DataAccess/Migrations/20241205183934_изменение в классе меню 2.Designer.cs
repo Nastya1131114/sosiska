@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using sosiska;
 
@@ -11,9 +12,11 @@ using sosiska;
 namespace sosiska.Migrations
 {
     [DbContext(typeof(MyDbContect))]
-    partial class MySosiskaContectModelSnapshot : ModelSnapshot
+    [Migration("20241205183934_изменение в классе меню 2")]
+    partial class изменениевклассеменю2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

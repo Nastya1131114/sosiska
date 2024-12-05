@@ -15,5 +15,6 @@ namespace sosiska.Model
         public string MiddleName { get; set; }
         public DateTime Birthday { get; set; }
         public Position ? Position { get; set; }  
+
     }
 }
