@@ -1,4 +1,6 @@
-﻿using Sosiska3.ViewModels;
+﻿using Microsoft.Data.SqlClient;
+using sosiska.Model;
+using Sosiska3.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,16 +27,13 @@ namespace Sosiska3.Forms.WorkerForms
             InitializeComponent();
             DataContext = new WorkerListViewModel();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
             AddWorker addWorker = new AddWorker();
             addWorker.ShowDialog();
+
+            DataContext = new WorkerListViewModel();
+
         }
     }
 }

@@ -7,7 +7,7 @@
         xmlns:viewModel="clr-namespace:Sosiska3.ViewModels"
         mc:Ignorable="d"
         Title="CookerList" Height="450" Width="800"
-        d:DataContext ="{d:DesignInstance viewModel:WorkerListViewModel}">
+        d:DataContext ="{d:DesignInstance viewModel:CookerListViewModel}">
     <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
         <Button Content="На главную страницу" HorizontalAlignment="Left" Margin="644,374,0,0" VerticalAlignment="Top" Height="38" Width="134" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
         <Button Content="Добавить категорию" HorizontalAlignment="Left" Margin="629,49,0,0" VerticalAlignment="Top" Height="38" Width="149" Click="Button_Click1" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
@@ -19,7 +19,7 @@
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" />
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name }" />
                 <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}" />
-                <DataGridTextColumn Header="Должность " Binding="{Binding Path=Position.PositionName}" />
+                <!--<DataGridTextColumn Header="Должность " Binding="{Binding Path=Position.PositionName}" />-->
                 <DataGridTextColumn Header="Категория " Binding="{Binding Path=Cooker.Category}" />
             </DataGrid.Columns>
         </DataGrid>

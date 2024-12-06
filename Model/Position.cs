@@ -11,10 +11,10 @@ namespace Model
     {
         public int Id { get; set; }
         public string PositionName { get; set; }
-        public ICollection<Worker> Workers { get; set; }
+        public ICollection<Cooker> Workers { get; set; }
         public Position()
         {
-            Workers = new List<Worker>();
+            Workers = new List<Cooker>();
         }
     }
 }

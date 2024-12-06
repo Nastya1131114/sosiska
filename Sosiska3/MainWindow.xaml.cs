@@ -38,13 +38,13 @@ namespace Sosiska3
 
         private void OrderList(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             OrderList order = new OrderList();
             order.ShowDialog();
         }
         private void CookerClick(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             CookerList cooker = new CookerList();
             cooker.ShowDialog();
         }

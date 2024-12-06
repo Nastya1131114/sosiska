@@ -17,10 +17,10 @@ namespace Sosiska3.ViewModels
 {
     public class AddWorkerViewModel : INotifyPropertyChanged
     {
-        public Worker Worker { get; set; }
+        public Cooker Worker { get; set; }
         public IExitManager ExitManager { get; }
 
-        public AddWorkerViewModel(Worker newWorker, IExitManager exitManager)
+        public AddWorkerViewModel(Cooker newWorker, IExitManager exitManager)
         {
             Worker = newWorker;
             ExitManager = exitManager;

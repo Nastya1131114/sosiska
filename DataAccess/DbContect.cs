@@ -33,7 +33,7 @@ namespace sosiska
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Cooker> Cookers { get; set; }
-        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Cooker> Workers { get; set; }
         public DbSet<Category> Categories  { get; set; }
         public DbSet<Client>  Clients {get; set; }
         public DbSet<DishOrder> DishOrders  { get; set; }
