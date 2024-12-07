@@ -17,10 +17,10 @@ namespace Sosiska3.ViewModels
     {
         public WorkerListViewModel()
         {
-            Workers = MyDbContect.DefaultContext.Workers.Include(d => d.Positions).ToList(); // сделать инклуд
+            Workers = MyDbContect.DefaultContext.Workers.Include(d => d.Position).ToList(); // сделать инклуд
         }
-        private List<Cooker> _workers;
-        public List<Cooker> Workers
+        private List<Worker> _workers;
+        public List<Worker> Workers
         {
             get { return _workers; }
             set
@@ -36,6 +36,6 @@ namespace Sosiska3.ViewModels
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-        public Cooker SelectedWorker { get; set; }
+        public Worker SelectedWorker { get; set; }
     }
 }

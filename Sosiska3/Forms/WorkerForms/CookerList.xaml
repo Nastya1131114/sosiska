@@ -13,14 +13,15 @@
         <Button Content="Добавить категорию" HorizontalAlignment="Left" Margin="629,49,0,0" VerticalAlignment="Top" Height="38" Width="149" Click="Button_Click1" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
         <Button Content="Редактировать сотрудника" HorizontalAlignment="Left" Margin="629,92,0,0" VerticalAlignment="Top" Height="38" Width="149" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
         <Button Content="Удалить нерадивого" HorizontalAlignment="Left" Margin="629,135,0,0" VerticalAlignment="Top" Height="38" Width="149" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-        <DataGrid CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Path=Workers}" Margin="0,0,263,0"
+        <DataGrid CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Path=Cookers}" Margin="0,0,263,0"
                   Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" />
-                <DataGridTextColumn Header="Имя" Binding="{Binding Name }" />
-                <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}" />
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding CookerSurname}" />
+                <DataGridTextColumn Header="Имя" Binding="{Binding CookerName }" />
+                <DataGridTextColumn Header="Отчество" Binding="{Binding CookerMiddleName}" />
                 <!--<DataGridTextColumn Header="Должность " Binding="{Binding Path=Position.PositionName}" />-->
-                <DataGridTextColumn Header="Категория " Binding="{Binding Path=Cooker.Category}" />
+                <DataGridTextColumn Header="День рождения " Binding="{Binding CookerBirthday}" />
+                <DataGridTextColumn Header="Категория " Binding="{Binding Path=Category.CategoryName}" />
             </DataGrid.Columns>
         </DataGrid>
 

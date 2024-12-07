@@ -32,7 +32,7 @@ namespace Sosiska3.Forms.WorkerForms
         public AddWorker()
         {
             InitializeComponent();
-            Cooker tmp = new Cooker();
+            Worker tmp = new Worker();
             DataContext = new AddWorkerViewModel(tmp, this);
             //DbContext context = new DbContext();
         }

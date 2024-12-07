@@ -23,7 +23,7 @@ namespace Sosiska3.Forms.WorkerForms
         public CookerList()
         {
             InitializeComponent();
-            DataContext = new WorkerListViewModel();
+            DataContext = new CookerListViewModel();
         }
 
         private void Button_Click1(object sender, RoutedEventArgs e)
@@ -33,7 +33,7 @@ namespace Sosiska3.Forms.WorkerForms
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this .Close();
+            //this .Close();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
