@@ -17,12 +17,12 @@ namespace Sosiska3.ViewModels
 {
     public class AddDishViewModel : INotifyPropertyChanged
     {
-        public Cooker Cooker { get; set; }
+        public Dish Dishes { get; set; }
         public IExitManager ExitManager { get; }
 
         public AddDishViewModel(Cooker newCooker, IExitManager exitManager)
         {
-            Cooker = newCooker;
+            Dish = newDish;
             ExitManager = exitManager;
             Categories = MyDbContect.DefaultContext.Categories.ToList(); //мейби так 
 

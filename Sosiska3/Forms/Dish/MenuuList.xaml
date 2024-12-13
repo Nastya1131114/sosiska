@@ -13,14 +13,14 @@
             <RowDefinition Height="377*"/>
             <RowDefinition Height="73*"/>
         </Grid.RowDefinitions>
-        <DataGrid CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding   Dishes}"  Margin="0,0,263,0" >
+        <DataGrid CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Dishes}"  Margin="0,0,10,70" Grid.RowSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Блюдо" Binding="{Binding Path = DishName}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Состав блюда" Binding="{Binding Path=DishComponent}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Цена" Binding="{Binding DishCost}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="400,0,0,13" Grid.Row="1" VerticalAlignment="Bottom" Height="47" Width="169"/>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="588,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="169" Click="Button_Click"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="400,0,0,13" Grid.Row="1" VerticalAlignment="Bottom" Height="47" Width="169" Click="Button_Click_1"/>
+        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="588,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Width="169" Click="Button_Click"/>
     </Grid>
 </Window>

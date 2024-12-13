@@ -12,14 +12,14 @@
     <DockPanel Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
         <Menu Height="25" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" DockPanel.Dock="Top">
             <MenuItem Header="Справочник" FontFamily="Times New Roman" FontSize="14">
-                <MenuItem Header="Сотрудники" Click="MenuItem_Click">
-                    <MenuItem Header="Работники"></MenuItem>
+                <MenuItem Header="Сотрудники"><!--Click="MenuItem_Click">-->
+                    <MenuItem Header="Работники" Click="MenuItem_Click"></MenuItem>
                     <MenuItem Header="Сотрудники" Click="CookerClick"></MenuItem>
                 </MenuItem>
 
                 <MenuItem Header="Меню">
                     <MenuItem Header ="Меню"  Click="Menu_Click1"></MenuItem>
-                    <MenuItem Header="Блюдо"></MenuItem>
+                    <!--<MenuItem Header="Блюдо"></MenuItem>-->
                     <!--<MenuItem Header="Продукты" ></MenuItem>-->
                 </MenuItem>
                 <MenuItem Header="Клиенты" >

@@ -1,0 +1,31 @@
+﻿<Window x:Class="Sosiska3.Forms.WorkerForms.AddCooker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sosiska3.Forms.WorkerForms"      
+        xmlns:viewModel="clr-namespace:Sosiska3.ViewModels"
+        mc:Ignorable="d"
+        Title="AddCooker" Height="214" Width="470"
+        d:DataContext ="{d:DesignInstance viewModel:AddDishViewModel}" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+    <Grid Margin="0,0,10,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="163*"/>
+            <ColumnDefinition Width="57*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="3,144,0,0" VerticalAlignment="Top" Height="26" Width="129" Grid.Column="1" Command="{Binding Path=SaveCommand}"/>
+        <!--вместо клика, делаем команду-->
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="282,140,0,0" VerticalAlignment="Top" Height="26" Width="129" Click="CookerBack" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="3,10,0,0" TextWrapping="Wrap" Text="Блюдо" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="3,31,0,0" TextWrapping="Wrap" Text="Вес" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="3,52,0,0" TextWrapping="Wrap" Text="Граммовка/шт" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
+        <!--<TextBlock HorizontalAlignment="Left" Margin="3,73,0,0" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Width="152" Grid.Column="1"/>-->
+        <TextBlock HorizontalAlignment="Left" Margin="3,76,0,0" TextWrapping="Wrap" Text="Стоимость" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Margin="189,8,0,0" TextWrapping="Wrap" Text="{Binding Path= Cooker.CookerSurname}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="189,29,0,0" TextWrapping="Wrap" Text="{Binding Path=Cooker.CookerName}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="189,76,0,0" TextWrapping="Wrap" Text="{Binding Path=Cooker.CookerMiddleName}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <!--<DatePicker HorizontalAlignment="Left" Margin="189,66,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>-->
+        <ComboBox HorizontalAlignment="Left" Margin="189,49,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Categories}" SelectedItem="{Binding Path= Cooker.Category}" DisplayMemberPath="CategoryName"/>
+    </Grid>
+</Window>

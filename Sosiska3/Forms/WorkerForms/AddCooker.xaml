@@ -7,7 +7,7 @@
         xmlns:viewModel="clr-namespace:Sosiska3.ViewModels"
         mc:Ignorable="d"
         Title="AddCooker" Height="214" Width="470"
-        d:DataContext ="{d:DesignInstance viewModel:AddCookerViewModel}" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        d:DataContext ="{d:DesignInstance viewModel:DishListViewModel}" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
     <Grid Margin="0,0,10,-6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"/>
@@ -22,7 +22,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="3,52,0,0" TextWrapping="Wrap" Text="Отчетсво" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="3,73,0,0" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="3,94,0,0" TextWrapping="Wrap" Text="Должность" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Margin="189,8,0,0" TextWrapping="Wrap" Text="{Binding Path= Cooker.CookerSurname}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="189,8,0,0" TextWrapping="Wrap" Text="{Binding Path= Dishes.}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Margin="189,29,0,0" TextWrapping="Wrap" Text="{Binding Path=Cooker.CookerName}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Margin="189,50,0,0" TextWrapping="Wrap" Text="{Binding Path=Cooker.CookerMiddleName}" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
         <DatePicker HorizontalAlignment="Left" Margin="189,66,0,0" VerticalAlignment="Top" Width="211" Grid.Column="1" Grid.ColumnSpan="2"/>
