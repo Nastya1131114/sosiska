@@ -9,10 +9,10 @@
         Title="CookerList" Height="450" Width="800"
         d:DataContext ="{d:DesignInstance viewModel:CookerListViewModel}">
     <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
-        <Button Content="На главную страницу" HorizontalAlignment="Left" Margin="644,374,0,0" VerticalAlignment="Top" Height="38" Width="134" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+        <!--<Button Content="На главную страницу" HorizontalAlignment="Left" Margin="644,374,0,0" VerticalAlignment="Top" Height="38" Width="134" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>-->
         <Button Content="Добавить категорию" HorizontalAlignment="Left" Margin="629,49,0,0" VerticalAlignment="Top" Height="38" Width="149" Click="Button_Click1" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-        <Button Content="Редактировать сотрудника" HorizontalAlignment="Left" Margin="629,92,0,0" VerticalAlignment="Top" Height="38" Width="149" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-        <Button Content="Удалить нерадивого" HorizontalAlignment="Left" Margin="629,135,0,0" VerticalAlignment="Top" Height="38" Width="149" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+        <Button Content="Редактировать сотрудника" HorizontalAlignment="Left" Margin="629,92,0,0" VerticalAlignment="Top" Height="38" Width="149" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+        <Button Content="Удалить нерадивого" HorizontalAlignment="Left" Margin="629,135,0,0" VerticalAlignment="Top" Height="38" Width="149" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
         <DataGrid CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Path=Cookers}" Margin="0,0,263,0"
                   Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
             <DataGrid.Columns>

@@ -1,4 +1,6 @@
-﻿using Sosiska3.ViewModels;
+﻿using Microsoft.Data.SqlClient;
+using sosiska.Model;
+using Sosiska3.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +18,7 @@ using System.Windows.Shapes;
 namespace Sosiska3.Forms.WorkerForms
 {
     /// <summary>
-    /// Логика взаимодействия для CookerList.xaml
+    /// Логика взаимодействия для WorkerShowList.xaml
     /// </summary>
     public partial class CookerList : Window
     {
@@ -25,17 +27,13 @@ namespace Sosiska3.Forms.WorkerForms
             InitializeComponent();
             DataContext = new CookerListViewModel();
         }
-
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
+            AddCooker addCooker = new AddCooker();
+            addCooker.ShowDialog();
 
-        }
+            DataContext = new CookerListViewModel();
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //this .Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
         }
     }
 }

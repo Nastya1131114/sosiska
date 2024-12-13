@@ -23,7 +23,7 @@
                 <DataGridTextColumn Header="Должность" Binding="{Binding Path =Position.PositionName}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Обновить информацию" HorizontalAlignment="Left" Margin="628,193,0,0" VerticalAlignment="Top" Height="38" Width="150"  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
+        <!--<Button Content="Обновить информацию" HorizontalAlignment="Left" Margin="628,193,0,0" VerticalAlignment="Top" Height="38" Width="150"  Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>-->
 
     </Grid>
 </Window>
