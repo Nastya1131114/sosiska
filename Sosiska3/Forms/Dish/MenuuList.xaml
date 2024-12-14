@@ -15,9 +15,10 @@
         </Grid.RowDefinitions>
         <DataGrid CanUserAddRows="False" IsReadOnly="False" AutoGenerateColumns="False" ItemsSource="{Binding Dishes}"  Margin="0,0,10,70" Grid.RowSpan="2" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Блюдо" Binding="{Binding Path = DishName}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Состав блюда" Binding="{Binding Path=DishComponent}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Цена" Binding="{Binding DishCost}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Блюдо" Binding="{Binding Path = Dish.DishName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Состав блюда" Binding="{Binding Path= Dish.DishComponents}" Width="*"></DataGridTextColumn>
+                <!--<DataGridTextColumn Header="Вес" Binding="{Binding Path=DishWeight}" Width="*"></DataGridTextColumn>-->
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Dish.DishCost}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Добавить" HorizontalAlignment="Left" Margin="400,0,0,13" Grid.Row="1" VerticalAlignment="Bottom" Height="47" Width="169" Click="Button_Click_1"/>

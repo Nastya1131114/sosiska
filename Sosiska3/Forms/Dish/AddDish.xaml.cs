@@ -23,5 +23,10 @@ namespace Sosiska3.Forms.Dish
         {
             InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -39,7 +39,8 @@ namespace Sosiska3.Forms.Dish
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            AddDish addDish = new AddDish();
+            addDish.Show();
         }
     }
 }

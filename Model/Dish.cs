@@ -14,6 +14,7 @@ namespace sosiska.Model
         //public int MenuId { get; set; }
         //public Menu Menu { get; set; }
         public string DishName { get; set; }
+        //public int DishWeight { get; set; }
         public int DishCost { get; set; }
         public ICollection <DishOrder> Orders { get; set; } = new List<DishOrder>();
         public ICollection<DishComponent > DishComponents { get; set; }

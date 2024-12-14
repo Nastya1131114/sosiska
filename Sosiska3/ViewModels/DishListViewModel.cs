@@ -17,10 +17,10 @@ namespace Sosiska3.ViewModels
     {
         public DishListViewModel()
         {
-            Dishes = MyDbContect.DefaultContext.Dishes.ToList();
+            Dish = MyDbContect.DefaultContext.Dishes.ToList();
         }
         private List<Dish> _dishes;
-        public List<Dish> Dishes
+        public List<Dish> Dish
         {
             get { return _dishes; }
             set
