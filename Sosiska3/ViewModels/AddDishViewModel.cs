@@ -17,26 +17,26 @@ namespace Sosiska3.ViewModels
 {
     public class AddDishViewModel : INotifyPropertyChanged
     {
-        public Dish Dishes { get; set; }
+        public Dish Dish { get; set; }
         public IExitManager ExitManager { get; }
 
-        public AddDishViewModel(Cooker newCooker, IExitManager exitManager)
+        public AddDishViewModel(Dish newDish, IExitManager exitManager)
         {
             Dish = newDish;
             ExitManager = exitManager;
-            Categories = MyDbContect.DefaultContext.Categories.ToList(); //мейби так 
+            Products = MyDbContect.DefaultContext.Products.ToList(); //мейби так 
 
             SaveCommand = new RelayCommand(
                 (obj) =>
                 {
-                    MyDbContect.DefaultContext.Cookers.Add(Cooker);
+                    MyDbContect.DefaultContext.Dishes.Add(Dish);
                     MyDbContect.DefaultContext.SaveChanges(); // обрубается сохранения 
                     ExitManager.CloseForm();
                 }
 
             );
         }
-        public List<Category> Categories { get; set; }
+        public List<Product> Products { get; set; }
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

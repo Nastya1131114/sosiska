@@ -15,12 +15,12 @@ using Sosiska3.ViewModels.Abstractions;
 
 namespace Sosiska3.ViewModels
 {
-    public class AddDishViewModel : INotifyPropertyChanged
+    public class AddCookerViewModel : INotifyPropertyChanged
     {
         public Cooker Cooker { get; set; }
         public IExitManager ExitManager { get; }
 
-        public AddDishViewModel(Cooker newCooker, IExitManager exitManager)
+        public AddCookerViewModel(Cooker newCooker, IExitManager exitManager)
         {
             Cooker = newCooker;
             ExitManager = exitManager;
