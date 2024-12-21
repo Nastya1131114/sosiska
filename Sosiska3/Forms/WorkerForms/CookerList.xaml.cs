@@ -29,7 +29,9 @@ namespace Sosiska3.Forms.WorkerForms
             InitializeComponent();
 
             ICookerCreatorService service = new WpfCookerCreatorService();
-            DataContext = new CookerListViewModel(service);
+            ICookerRemoveService removeService = new WpfCookerRemoveService();
+            DataContext = new CookerListViewModel(service, removeService);
+
         }
         //private void Button_Click1(object sender, RoutedEventArgs e)
         //{

@@ -10,17 +10,29 @@ namespace Sosiska3.ViewModels
 {
     public class CookerListViewModel : INotifyPropertyChanged
     {
-        public CookerListViewModel(ICookerCreatorService cookerCreator)
+
+        public CookerListViewModel(ICookerCreatorService cookerCreator, ICookerRemoveService cookerRemove)
         {
             Cookers = new ObservableCollection<Cooker>( 
                 MyDbContect.DefaultContext.Cookers.Include(d => d.Category)
                 ); // сделать инклуд
 
-            CookerCreator = cookerCreator;
+            CookerCreatorService = cookerCreator;
+            CookerRemoveService = cookerRemove;
+
+            RemoveCommand = new RelayCommand((obj) =>
+                {
+                    if (CookerRemoveService.Remove(SelectedCooker))
+                    {
+                        Cookers.Remove(SelectedCooker);
+                    }
+                }, 
+                (obj) => SelectedCooker != null
+            );
 
             AddCommand = new RelayCommand( (obj) =>
             {
-                Cooker ? newCooker = CookerCreator.CreateCooker();
+                Cooker ? newCooker = CookerCreatorService.CreateCooker();
                 if(newCooker != null)
                 {
                     Cookers.Add(newCooker);
@@ -37,8 +49,9 @@ namespace Sosiska3.ViewModels
                 OnPropertyChanged();
             }
         }
+        ICookerCreatorService CookerCreatorService { get; set; }
+        ICookerRemoveService CookerRemoveService { get; set; }
 
-        ICookerCreatorService CookerCreator { get; set; }
 
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -47,7 +60,8 @@ namespace Sosiska3.ViewModels
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-        public Cooker ? SelectedWorker { get; set; }
+        public Cooker ? SelectedCooker { get; set; }
         public RelayCommand AddCommand { get; set; }
+        public RelayCommand RemoveCommand { get; set; }
     }
 }
