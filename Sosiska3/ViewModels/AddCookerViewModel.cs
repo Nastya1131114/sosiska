@@ -31,9 +31,16 @@ namespace Sosiska3.ViewModels
                 {
                     MyDbContect.DefaultContext.Cookers.Add(Cooker);
                     MyDbContect.DefaultContext.SaveChanges(); // обрубается сохранения 
+                    IsCookerSaved = true;
                     ExitManager.CloseForm();
                 }
+            );
 
+            CancelCommand = new RelayCommand(
+                (obj) =>
+                {
+                    ExitManager.CloseForm();
+                }
             );
         }
         public List<Category> Categories { get; set; }
@@ -45,6 +52,9 @@ namespace Sosiska3.ViewModels
         }
 
         public RelayCommand SaveCommand { get; set; }
+        
+        public RelayCommand CancelCommand { get; set; }
 
+        public bool IsCookerSaved { get; set; } = false;
     }
 }

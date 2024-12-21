@@ -1,6 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using sosiska.Model;
+using Sosiska3.Services;
 using Sosiska3.ViewModels;
+using Sosiska3.ViewModels.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,15 +27,13 @@ namespace Sosiska3.Forms.WorkerForms
         public CookerList()
         {
             InitializeComponent();
-            DataContext = new CookerListViewModel();
-        }
-        private void Button_Click1(object sender, RoutedEventArgs e)
-        {
-            AddCooker addCooker = new AddCooker();
-            addCooker.ShowDialog();
 
-            DataContext = new CookerListViewModel();
-
+            ICookerCreatorService service = new WpfCookerCreatorService();
+            DataContext = new CookerListViewModel(service);
         }
+        //private void Button_Click1(object sender, RoutedEventArgs e)
+        //{
+
+        //}
     }
 }

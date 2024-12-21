@@ -30,22 +30,18 @@ namespace Sosiska3.Forms.WorkerForms
     /// </summary>
     public partial class AddCooker  : Window, IExitManager
     {
+        public AddCookerViewModel ViewModel { get; set; }
         public AddCooker()
         {
             InitializeComponent();
             Cooker p = new Cooker();
-            DataContext = new AddCookerViewModel(p, this);
-            //DbContext context = new DbContext();
+            ViewModel = new AddCookerViewModel(p, this);
+            DataContext = ViewModel;
         }
 
         public void CloseForm()
         {
             Close();
-        }
-
-        public void CookerBack(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

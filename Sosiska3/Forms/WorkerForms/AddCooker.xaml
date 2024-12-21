@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Button Content="Сохранить" HorizontalAlignment="Left" Margin="3,144,0,0" VerticalAlignment="Top" Height="26" Width="129" Grid.Column="1" Command="{Binding Path=SaveCommand}"/>
         <!--вместо клика, делаем команду-->
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="282,140,0,0" VerticalAlignment="Top" Height="26" Width="129" Click="CookerBack" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="282,140,0,0" VerticalAlignment="Top" Height="26" Width="129" Grid.Column="1" Grid.ColumnSpan="2" Command="{Binding Path=CancelCommand}"/>
         <TextBlock HorizontalAlignment="Left" Margin="3,10,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="3,31,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="3,52,0,0" TextWrapping="Wrap" Text="Отчетсво" VerticalAlignment="Top" Width="152" Grid.Column="1"/>
