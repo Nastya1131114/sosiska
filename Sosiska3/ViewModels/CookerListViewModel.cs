@@ -11,44 +11,46 @@ namespace Sosiska3.ViewModels
     public class CookerListViewModel : INotifyPropertyChanged
     {
 
-        public CookerListViewModel(ICookerCreatorService cookerCreator, ICookerRemoveService cookerRemove)
+        public CookerListViewModel(ICookerCreatorService cookerCreator, ICookerRemoveService cookerRemove, ICookerEditService cookerEdit)
         {
-            Cookers = new ObservableCollection<Cooker>( 
+            Cookers = new ObservableCollection<Cooker>(
                 MyDbContect.DefaultContext.Cookers.Include(d => d.Category)
                 ); // сделать инклуд
 
-            CookerCreatorService = cookerCreator;
-            CookerRemoveService = cookerRemove;
-            CookerEditService = cookerEdit;
+            CookerCreatorService = cookerCreator;//создание 
+            CookerRemoveService = cookerRemove;//удаление
+            CookerEditService = cookerEdit;//редактирование 
 
-            RemoveCommand = new RelayCommand((obj) =>
+            RemoveCommand = new RelayCommand((obj) =>//удаление 
                 {
                     if (CookerRemoveService.Remove(SelectedCooker))
                     {
                         Cookers.Remove(SelectedCooker);
                     }
-                }, 
+                },
                 (obj) => SelectedCooker != null
             );
 
-            AddCommand = new RelayCommand( (obj) =>
+            AddCommand = new RelayCommand((obj) =>//добавление
             {
-                Cooker ? newCooker = CookerCreatorService.CreateCooker();
-                if(newCooker != null)
+                Cooker? newCooker = CookerCreatorService.CreateCooker();
+                if (newCooker != null)
                 {
                     Cookers.Add(newCooker);
                 }
             });
 
-            EditCommand = new RelayCommand((obj) =>
+            EditCommand = new RelayCommand((obj) =>//редактирование
             {
-                if(CookerEditService.Edit(SelectedCooker))
-                {
-                    Cookers.Edit(SelectedCooker);
-                }
+                if (_selectedCooker != null)
+                    return;
+                Cooker? cookerEdit = CookerEditService.EditCooker(SelectedCooker);
             });
+
         }
         private ObservableCollection<Cooker> _cookers = null!;
+        private object _selectedCooker;
+
         public ObservableCollection<Cooker>  Cookers
         {
             get { return _cookers; }

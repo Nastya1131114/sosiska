@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace Sosiska3.ViewModels.Abstractions
 {
+    /// <summary>
+    /// интерфейс сервиса, который будет отвечать за редактирование кукеров
+    /// </summary>
     public interface ICookerEditService
     {
-        Cooker? EditCooker();
-
+       Cooker? EditCooker(Cooker cooker);
+        
     }
 }
