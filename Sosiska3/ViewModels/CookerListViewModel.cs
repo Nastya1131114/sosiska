@@ -42,14 +42,15 @@ namespace Sosiska3.ViewModels
 
             EditCommand = new RelayCommand((obj) =>//редактирование
             {
-                if (_selectedCooker != null)
+                if (SelectedCooker == null) {
                     return;
-                Cooker? cookerEdit = CookerEditService.EditCooker(SelectedCooker);
+                }
+                bool cookerWasEdited = CookerEditService.EditCooker(SelectedCooker);
+                
             });
 
         }
         private ObservableCollection<Cooker> _cookers = null!;
-        private object _selectedCooker;
 
         public ObservableCollection<Cooker>  Cookers
         {

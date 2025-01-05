@@ -13,15 +13,12 @@ namespace Sosiska3.Services
 {
     public class WpfCookerEditService : ICookerEditService
     {
-        public Cooker? EditCooker(Cooker cooker)
+        //будем возвращать true, если объект редактировался и сохранялся, иначе false
+        public bool EditCooker(Cooker cooker)
         {
-                AddCooker editForm = new AddCooker();//cooker);
+                AddCooker editForm = new AddCooker(cooker);
                 editForm.ShowDialog();
-                if (editForm.ViewModel.IsCookerSaved)
-                {
-                    return editForm.ViewModel.Cooker;
-                }
-                return null;
+                return editForm.ViewModel.IsCookerSaved;
         }
     }
 }

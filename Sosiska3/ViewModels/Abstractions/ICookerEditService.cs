@@ -12,7 +12,8 @@ namespace Sosiska3.ViewModels.Abstractions
     /// </summary>
     public interface ICookerEditService
     {
-       Cooker? EditCooker(Cooker cooker);
+        //будем возвращать true, если объект редактировался и сохранялся, иначе false
+       bool EditCooker(Cooker cooker);
         
     }
 }

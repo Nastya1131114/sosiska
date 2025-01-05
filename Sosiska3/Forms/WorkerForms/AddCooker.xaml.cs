@@ -28,7 +28,7 @@ namespace Sosiska3.Forms.WorkerForms
     /// <summary>
     /// Логика взаимодействия для AddWorker.xaml
     /// </summary>
-    public partial class AddCooker  : Window, IExitManager
+    public partial class AddCooker : Window, IExitManager
     {
         public AddCookerViewModel ViewModel { get; set; }
         public AddCooker()
@@ -36,6 +36,14 @@ namespace Sosiska3.Forms.WorkerForms
             InitializeComponent();
             Cooker p = new Cooker();
             ViewModel = new AddCookerViewModel(p, this);
+            DataContext = ViewModel;
+        }
+
+        //отдельный конструктор, куда передаем редактируемого кукера
+        public AddCooker(Cooker editedCooker)
+        {
+            InitializeComponent();
+            ViewModel = new AddCookerViewModel(editedCooker, this);
             DataContext = ViewModel;
         }
 

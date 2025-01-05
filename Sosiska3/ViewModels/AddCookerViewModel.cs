@@ -29,9 +29,13 @@ namespace Sosiska3.ViewModels
             SaveCommand = new RelayCommand(
                 (obj) =>
                 {
-                    MyDbContect.DefaultContext.Cookers.Add(Cooker);
-                    MyDbContect.DefaultContext.SaveChanges(); // обрубается сохранения 
-                    IsCookerSaved = true;
+                    if( IsNewCooker) {
+                        MyDbContect.DefaultContext.Cookers.Add(Cooker);
+                    }
+                    if (IsCookerMustBeSaved) {
+                        MyDbContect.DefaultContext.SaveChanges(); // обрубается сохранения 
+                        IsCookerSaved = true;
+                    }
                     ExitManager.CloseForm();
                 }
             );
@@ -39,6 +43,13 @@ namespace Sosiska3.ViewModels
             CancelCommand = new RelayCommand(
                 (obj) =>
                 {
+                    if (IsCookerChanged) {
+                        //за счет биндинга у нас изменились поля объекта, однако пользователь нажал отмену,
+                        //поэтому нужно загрузить текущие значения полей объекта (более правильная альтренатива - перед редактированием делать копию)
+                        MyDbContect.DefaultContext.Entry(Cooker).Reload();
+                        OnPropertyChanged(null);
+                    }
+
                     ExitManager.CloseForm();
                 }
             );
@@ -56,5 +67,40 @@ namespace Sosiska3.ViewModels
         public RelayCommand CancelCommand { get; set; }
 
         public bool IsCookerSaved { get; set; } = false;
+
+
+        private bool IsCookerMustBeSaved
+        {
+            get
+            {
+                return IsCookerChanged || IsNewCooker;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство, определяющее состояние объекта (новый) или сушествующий.  
+        /// </summary>
+        private bool IsNewCooker
+        {
+            get
+            {
+                /// Если новый, у него будет состояние Detached в EntityFramework, что означает, что объект не присоединен к контексту
+                return MyDbContect.DefaultContext.Entry(Cooker).State == EntityState.Detached;
+            }
+        }
+
+        /// <summary>
+        /// Свойство, показывающее, что объет изменен (либо отсутствует в БД)
+        /// </summary>
+        private bool IsCookerChanged
+        {
+            get
+            {
+                var cookerState = MyDbContect.DefaultContext.Entry(Cooker).State;
+                return cookerState == EntityState.Modified;
+            }
+        }
+
     }
 }
