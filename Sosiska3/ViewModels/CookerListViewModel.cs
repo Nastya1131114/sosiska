@@ -19,6 +19,7 @@ namespace Sosiska3.ViewModels
 
             CookerCreatorService = cookerCreator;
             CookerRemoveService = cookerRemove;
+            CookerEditService = cookerEdit;
 
             RemoveCommand = new RelayCommand((obj) =>
                 {
@@ -38,6 +39,14 @@ namespace Sosiska3.ViewModels
                     Cookers.Add(newCooker);
                 }
             });
+
+            EditCommand = new RelayCommand((obj) =>
+            {
+                if(CookerEditService.Edit(SelectedCooker))
+                {
+                    Cookers.Edit(SelectedCooker);
+                }
+            });
         }
         private ObservableCollection<Cooker> _cookers = null!;
         public ObservableCollection<Cooker>  Cookers
@@ -51,6 +60,7 @@ namespace Sosiska3.ViewModels
         }
         ICookerCreatorService CookerCreatorService { get; set; }
         ICookerRemoveService CookerRemoveService { get; set; }
+        ICookerEditService CookerEditService { get; set; }
 
 
 
@@ -63,5 +73,6 @@ namespace Sosiska3.ViewModels
         public Cooker ? SelectedCooker { get; set; }
         public RelayCommand AddCommand { get; set; }
         public RelayCommand RemoveCommand { get; set; }
+        public RelayCommand EditCommand { get; set; }
     }
 }
